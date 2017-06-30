@@ -90,7 +90,7 @@ public void OrdenarCostos() throws Exception{
 	Arco Arcj;
 	int j = 0;
 	
-	for(int i=1;i<MisArcos.getTamaño();i++){
+	for(int i=1;i<MisArcos.getTamaÃ±o();i++){
 		TemArc = MisArcos.getElemento(i);
 		j=i-1;
 		Arcj= MisArcos.getElemento(j);
@@ -105,7 +105,7 @@ public void OrdenarCostos() throws Exception{
 	}
 }
 
-public int Kruscal() throws Exception{//Kruskal
+public int Kruscal() throws Exception{// O(n cuadrado)
 	Arco Arc;
 	Integer NodoOrigen;
 	Integer NodoDestino;
