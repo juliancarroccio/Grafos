@@ -1,6 +1,6 @@
 package algoritmos;
 
-public class Dijkstra {
+public class Dijkstra {  ///o(n cuadrado)
 	private int[][] matrizAdy;
 	private boolean[] visitados;
 	private int[] costos; /// NODO RESULTADO
