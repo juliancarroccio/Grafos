@@ -1,6 +1,6 @@
 package algoritmos;
 
-public class Warshall {
+public class Warshall {	///O(n cubo)
 	public static void algWarshall(int[][] matrizAdy) {
 		int cantPos = matrizAdy.length;
 		
