@@ -1,6 +1,6 @@
 package algoritmos;
 
-public class Floyd {
+public class Floyd {	///O(n cubo)
 	
 	public void algoritmoFloyd(int[][] matrizAdy) {
 		int cantPos = matrizAdy.length;
