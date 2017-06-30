@@ -1,29 +1,29 @@
 package algoritmos;
 
 /**
- * Clase que encuentra un subconjunto de aristas que forman un árbol con todos
- * los vertices, donde el peso total de todas las aristas en el árbol es el
- * mínimo posible.
+ * Clase que encuentra un subconjunto de aristas que forman un Ã¡rbol con todos
+ * los vertices, donde el peso total de todas las aristas en el Ã¡rbol es el
+ * mÃ­nimo posible.
  * <p>
  * El grafo debe ser no dirigido.
  * 
  * ACLARACION: EL ARDEN DE LOS VERTICES LO DA LA FILA DE LA MATRIZ DE ADYACENCIA
  */
-public class Prim {
+public class Prim {	///O(n cuadrado)
 	/**
 	 * Matriz de adyacencia. 
 	 */
 	private int[][] matrizAdyacencia;
 	/**
-	 * Tamaño de la matriz.
+	 * TamaÃ±o de la matriz.
 	 */
-	private int tamaño;
+	private int tamaÃ±o;
 	/**
 	 * Nodo origen. <br>
 	 */
 	private int[] padre;
 	/**
-	 * Peso mínimo para llegar a un nodo.
+	 * Peso mÃ­nimo para llegar a un nodo.
 	 */
 	private int[] pesoMinimo;
 	/**
@@ -32,28 +32,28 @@ public class Prim {
 	private boolean[] recorridoRealizado;
 
 	/**
-	 * Busca el subconjunto de aristas que forman un árbol con todos los
-	 * vertices, donde el peso total de todas las aristas en el árbol es el
-	 * mínimo posible.
+	 * Busca el subconjunto de aristas que forman un Ã¡rbol con todos los
+	 * vertices, donde el peso total de todas las aristas en el Ã¡rbol es el
+	 * mÃ­nimo posible.
 	 * 
 	 * @param matrizAdy
 	 *            Matriz de adyacencia del grafo.
 	 */
 	public Prim(final int[][] matrizAdy) {
-		this.tamaño = matrizAdy.length;
+		this.tamaÃ±o = matrizAdy.length;
 		this.matrizAdyacencia = matrizAdy;
-		this.padre = new int[this.tamaño];
-		this.pesoMinimo = new int[this.tamaño];
-		this.recorridoRealizado = new boolean[this.tamaño];
-		for (int i = 0; i < this.tamaño; i++) {
+		this.padre = new int[this.tamaÃ±o];
+		this.pesoMinimo = new int[this.tamaÃ±o];
+		this.recorridoRealizado = new boolean[this.tamaÃ±o];
+		for (int i = 0; i < this.tamaÃ±o; i++) {
 			this.pesoMinimo[i] = Integer.MAX_VALUE;
 		}
 		this.pesoMinimo[0] = 0;
 		this.padre[0] = -1;
-		for (int count = 0; count < this.tamaño - 1; count++) {
+		for (int count = 0; count < this.tamaÃ±o - 1; count++) {
 			int i = menorPeso();
 			this.recorridoRealizado[i] = true;
-			for (int j = 0; j < this.tamaño; j++) {
+			for (int j = 0; j < this.tamaÃ±o; j++) {
 				if (this.matrizAdyacencia[i][j] != 0 && this.recorridoRealizado[j] == false
 						&& this.matrizAdyacencia[i][j] < this.pesoMinimo[j]) {
 					this.padre[j] = i;
@@ -64,13 +64,13 @@ public class Prim {
 	}
 
 	/**
-	 * Muestra el subconjunto de aristas que forman el árbol el menor peso
+	 * Muestra el subconjunto de aristas que forman el Ã¡rbol el menor peso
 	 * posible. <br>
 	 */
 	public void mostarResultado() {
 		int peso = 0;
 		System.out.println("Resultado:");
-		for (int i = 1; i < this.tamaño; i++) {
+		for (int i = 1; i < this.tamaÃ±o; i++) {
 			if (this.matrizAdyacencia[i][this.padre[i]] != Integer.MAX_VALUE) {
 				System.out.println("De nodo " + (this.padre[i] + 1) + " a nodo " + (i + 1) + " Con peso " + this.matrizAdyacencia[i][this.padre[i]]);
 				peso += this.matrizAdyacencia[i][this.padre[i]];
@@ -82,13 +82,13 @@ public class Prim {
 	}
 
 	/**
-	 * Devuelve la posición de la arista con menor peso.
+	 * Devuelve la posiciÃ³n de la arista con menor peso.
 	 * 
-	 * @return Índice.
+	 * @return Ãndice.
 	 */
 	private int menorPeso() {
 		int min = Integer.MAX_VALUE, indice = 0;
-		for (int i = 0; i < this.tamaño; i++) {
+		for (int i = 0; i < this.tamaÃ±o; i++) {
 			if (this.recorridoRealizado[i] == false && this.pesoMinimo[i] < min) {
 				min = this.pesoMinimo[i];
 				indice = i;
