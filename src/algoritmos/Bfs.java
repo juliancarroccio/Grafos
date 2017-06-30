@@ -3,7 +3,7 @@ package algoritmos;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Bfs {
+public class Bfs {	///O(n+m)
 	private int nodoInicio;
 	private int[][] matrizAdy;
 	private Queue<Integer> cola = new LinkedList<Integer>();
