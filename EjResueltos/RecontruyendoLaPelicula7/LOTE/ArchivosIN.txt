@@ -1,0 +1,8 @@
+7
+enunciado
+caso2_No se puede reconstruir la peli
+caso3_reconstruir con costo0
+caso4_bajo costo
+caso5_mejor camino
+caso6_un solo camino
+caso7_aleatorio
