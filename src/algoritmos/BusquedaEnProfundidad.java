@@ -2,7 +2,7 @@ package algoritmos;
 
 import java.util.ArrayList;
 
-public class BusquedaEnProfundidad { /// DFS
+public class BusquedaEnProfundidad { /// DFS	///O(n+m)
 
 	private boolean[] marcado;
 	private int[][] adyacencia;
